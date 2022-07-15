@@ -13,7 +13,7 @@ jobs:
       - uses: hashicorp/setup-terraform@v2
       - name: Setup Terraform state bucket
         run: |
-          aws s3api create-bucket my-fancy-job-terraform-45678 --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
+          aws s3api create-bucket --bucket my-fancy-job-terraform-45678 --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
       - name: Deploy with Terraform
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
