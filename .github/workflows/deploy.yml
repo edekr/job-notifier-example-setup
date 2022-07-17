@@ -19,6 +19,7 @@ jobs:
       # Create bucket because sandbox maybe destroyed bucket
       - name: Setup Terraform state bucket
         run: |
+          cd infrastructure
           sh setup_terraform_state_bucket.sh
       - name: Deploy with Terraform
         run: |
