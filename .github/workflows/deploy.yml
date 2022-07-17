@@ -16,9 +16,10 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: hashicorp/setup-terraform@v2
+      # Create bucket because sandbox maybe destroyed bucket
       - name: Setup Terraform state bucket
         run: |
-          aws s3api create-bucket --bucket my-fancy-job-terraform-45678 --region eu-central-1 --create-bucket-configuration LocationConstraint=eu-central-1
+          sh setup_terraform_state_bucket.sh
       - name: Deploy with Terraform
         run: |
           cd infrastructure
