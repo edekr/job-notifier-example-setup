@@ -19,7 +19,7 @@ terraform {
 provider "aws" {
   region = "eu-central-1"
 
-
+}
 data "aws_caller_identity" "current" {}
 
 locals {
@@ -27,4 +27,4 @@ locals {
   role_arn = join(":", ["arn", "aws", "iam", "", local.account_id, "role/LabRole"])
 }
 
-}
+
