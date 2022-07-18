@@ -7,7 +7,7 @@ resource "aws_dynamodb_table" "jobs" {
 
   attribute {
     name = "id"
-    type = "N"
+    type = "S"
   }
 
 }
