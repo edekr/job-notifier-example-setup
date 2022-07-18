@@ -12,7 +12,7 @@ job_table = dynamodb_resource.Table(job_table_name)
 def load_job_data():
     print("start loading job data")
     response = requests.get(JOB_API_URL)
-    return response.json()
+    return response.json()["data"]
 
 def map_job_data(job_api_data):
     result = []

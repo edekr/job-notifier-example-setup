@@ -9,7 +9,7 @@ resource "aws_lambda_function" "fetch_jobs_lambda" {
   source_code_hash = filebase64sha256("build/fetch_jobs_lambda.zip")
 
   runtime = "python3.9"
-
+  timeout = 600
   layers = [ aws_lambda_layer_version.requests_layer.arn ]
 }
 
