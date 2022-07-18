@@ -2,7 +2,7 @@ resource "aws_lambda_function" "fetch_jobs_lambda" {
 
   filename      = "build/fetch_jobs_lambda.zip"
   function_name = "fetch_jobs_lambda"
-  role          = "arn:aws:iam::902499571432:role/LabRole"
+  role          = var.role_arn
   handler       = "fetch_job.handle"
 
 
