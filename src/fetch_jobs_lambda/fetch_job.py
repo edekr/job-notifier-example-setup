@@ -1,8 +1,10 @@
 import requests
 import boto3
 from datetime import datetime
+import os
+
 JOB_API_URL = 'https://www.arbeitnow.com/api/job-board-api'
-job_table_name = "jobs"
+job_table_name = os.environ["JOB_TABLE_NAME"]
 
 
 dynamodb_resource = boto3.resource("dynamodb")
