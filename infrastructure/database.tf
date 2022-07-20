@@ -9,5 +9,6 @@ resource "aws_dynamodb_table" "jobs" {
     name = "id"
     type = "S"
   }
-
+  stream_enabled = true
+  stream_view_type = "NEW_IMAGE"
 }
