@@ -19,8 +19,8 @@ def process_record(record):
     if "title" in newImage and "AWS" in newImage["title"]["S"].upper():
         send_mail(newImage)
         return
-    if "description" in newImage and "AWS" in newImage["description"]["S"].upper():
-        send_mail(newImage)
+    # if "description" in newImage and "AWS" in newImage["description"]["S"].upper():
+    #     send_mail(newImage)
 
 
 
